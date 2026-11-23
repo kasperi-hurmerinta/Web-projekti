@@ -1,3 +1,9 @@
 .menu {
     text-align: center;
 }
+
+a {
+    font-size: 100px;
+    text-decoration: none;
+    display: block;
+}
