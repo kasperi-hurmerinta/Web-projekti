@@ -11,11 +11,11 @@ h1 {
 .menu {
     width: 30%;
     display: flex;
-    justify-self: center;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
     gap: 15px;
+    margin-inline: auto;
 }
 
 .menu-item:hover {
