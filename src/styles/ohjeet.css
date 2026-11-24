@@ -25,7 +25,7 @@ p {
 }
 
 .menu {
-    width: 30%;
+    width: 60%;
     display: flex;
     justify-self: center;
     flex-direction: column;
