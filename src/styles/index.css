@@ -22,12 +22,6 @@ h1 {
     margin-inline: auto;
 }
 
-.menu-item:hover {
-    background-color: #005BD2;
-    color: #AFAFAF;
-    box-shadow: 0px 0px 10px #000000;
-}
-
 /* Footer style from https://codepen.io/SARAN-KUMAR-the-vuer/pen/bGJqwKq */
 /*Footer with waves*/
 

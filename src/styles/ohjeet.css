@@ -8,36 +8,21 @@ h1 {
     color: #AFAFAF;
 }
 
-.menu-item-exit {
-    font-size: 4vw;
-    text-decoration: none;
-    background-color: #AFAFAF;
-    color: #000000;
-    text-decoration: none;
-    border-radius: 10px;
-}
-
-p {
-    background-color: #AFAFAF;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 25px;
-}
-
 .menu {
-    width: 60%;
+    width: 100%;
     display: flex;
-    justify-self: center;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
     gap: 15px;
 }
 
-.menu-item-exit:hover {
-    background-color: #005BD2;
-    color: #AFAFAF;
-    box-shadow: 0px 0px 10px #000000;
+.instruction-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin-inline: auto;
 }
 
 /* Footer style from https://codepen.io/SARAN-KUMAR-the-vuer/pen/bGJqwKq */
