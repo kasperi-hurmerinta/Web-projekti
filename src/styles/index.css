@@ -1,11 +1,15 @@
 body {
     font-family: 'Jersey 15', sans-serif;
+    background-color: #120024;
+    margin: 0;
 }
+
 
 h1 {
     font-size: 6vw;
     text-align: center;
-    color: #AFAFAF;
+    color: #00F6FF;
+    text-shadow: 0px 0px 15px #FF007F;
 }
 
 .menu {
@@ -19,9 +23,10 @@ h1 {
 }
 
 .menu-item:hover {
-    background-color: #005BD2;
-    color: #AFAFAF;
-    box-shadow: 0px 0px 10px #000000;
+    background-color: #00F6FF;
+    color: #FF007F;
+    box-shadow: 0px 0px 20px #FF007F;
+    transform: scale(1.03);
 }
 
 /* Footer style from https://codepen.io/SARAN-KUMAR-the-vuer/pen/bGJqwKq */
@@ -41,12 +46,12 @@ h1 {
 
 .wave {
   position: absolute;
-  top: -100px;
+  top: -400px;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 400px;
   background: url('../images/wave.png') repeat-x;
-  background-size: 1000px 100px;
+  background-size: 1000px 400px;
 }
 
 .wave#wave1 {
@@ -92,5 +97,29 @@ h1 {
   }
   100% {
     background-positon-x: 0px;
+  }
+
+}
+.aurora {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%,
+    rgba(0, 255, 170, 0.4), /* Aurora Green */ rgba(0, 210, 255, 0.3), /* Bright Cyan */ rgba(110, 0, 255, 0.15), /* Hint of Violet */ transparent 60%);
+    filter: blur(60px);
+    animation: drift 12s ease-in-out infinite alternate;
+    z-index: -1;
+}
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(5%, 10%) rotate(15deg) scale(1.1);
+  }
+  100% {
+    transform: translate(-5%, -5%) rotate(-10deg) scale(0.95);
   }
 }
