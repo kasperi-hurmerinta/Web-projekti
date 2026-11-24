@@ -8,6 +8,15 @@ h1 {
     color: #AFAFAF;
 }
 
+.menu-item-exit {
+    font-size: 4vw;
+    text-decoration: none;
+    background-color: #AFAFAF;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
 .menu {
     width: 30%;
     display: flex;
@@ -18,7 +27,7 @@ h1 {
     gap: 15px;
 }
 
-.menu-item:hover {
+.menu-item-exit:hover {
     background-color: #005BD2;
     color: #AFAFAF;
     box-shadow: 0px 0px 10px #000000;
