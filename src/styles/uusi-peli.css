@@ -1,0 +1,11 @@
+.new-game-menu {
+    margin-top: 17vw;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    gap: 15px;
+    margin-inline: auto;
+    align-items: center;
+}
