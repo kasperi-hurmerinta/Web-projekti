@@ -1,7 +1,5 @@
 from database.database_connection import database_connect as connection
-
 connect = connection()
-
 
 class Player:
     current_player = None
@@ -12,7 +10,7 @@ class Player:
         self.score = pisteet
         self.location = location
         self.route = None
-
+    
     def addScore(self, score):
         cursor = connect.cursor()
         self.score += score
@@ -28,7 +26,7 @@ class Player:
         cursor.execute(update_sql, (location, self.id))
         connect.commit()
         cursor.close()
-
+        
     def setScore(self):
         cursor = connect.cursor()
         pull_score_sql = "SELECT pisteet FROM game WHERE id = %s"
@@ -36,20 +34,20 @@ class Player:
         result = cursor.fetchone()
         cursor.close()
         self.score = result[0] if result else 0
-
+        
     def setRoute(self, route):
         cursor = connect.cursor()
         update_sql = "UPDATE game SET route = %s WHERE id = %s"
         cursor.execute(update_sql, (route, self.id))
         connect.commit()
         cursor.close()
-        self.route = route
-
+        self.route = route        
+    
     def getScore(self):
         return self.score
-
+    
     def getLocation(self):
         return self.location
-
+    
     def getRoute(self):
         return self.route
