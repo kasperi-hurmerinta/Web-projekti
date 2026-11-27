@@ -12,8 +12,10 @@
 <body>
 
     <div class="new-game-menu">
-        <input type="text" placeholder="Anna pelaajan nimi" class="player-name-input" />
-        <button class="start-game-button">Aloita peli</button>
+        <form action="/new_game" method="POST">
+        <input type="text" name="screen_name" placeholder="Anna pelaajan nimi" class="player-name-input" />
+        <button type="submit" class="start-game-button">Aloita peli</button>
+        </form>
         <a href="index.html" class="menu-item">Palaa päävalikkoon</a>
     </div>
     
