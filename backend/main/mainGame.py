@@ -14,11 +14,12 @@ app = Flask(__name__, template_folder=src_path)
 def etusivu():
     return render_template("index.html")
 
-@app.route("/uusi-peli")
+@app.route("/uusi-peli", methods=["GET", "POST"])
 def uusi_peli():
+
     new_game()
 
-    return render_template("uusi_peli.html")
+    return render_template("uusi-peli.html")
 
 
 if __name__ == '__main__':

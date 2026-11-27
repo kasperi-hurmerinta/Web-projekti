@@ -12,11 +12,11 @@
 <body>
 
     <div class="new-game-menu">
-        <form action="/new_game" method="POST">
+        <form action="/uusi-peli" method="POST">
         <input type="text" name="screen_name" placeholder="Anna pelaajan nimi" class="player-name-input" />
         <button type="submit" class="start-game-button">Aloita peli</button>
         </form>
-        <a href="index.html" class="menu-item">Palaa päävalikkoon</a>
+        <a href="{{ url_for('etusivu') }}" class="menu-item">Palaa päävalikkoon</a>
     </div>
     
 </body>
