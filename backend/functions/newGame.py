@@ -1,38 +1,37 @@
 from database.database_connection import database_connect as connection
 from main.player import Player
 from functions.gameLoop import game_loop
-from flask import Flask, request
-app = Flask(__name__)
+from flask import request
 
-@app.route('/new_game', methods=['POST'])
 def new_game():
-    connect = connection()
-    cursor = connect.cursor()
 
-    screen_name = request.form["screen_name"]
-    # screen_name = input("Anna pelaajanimesi: ")
+    if request.method == 'POST':
 
-    if not screen_name:
-        return "Virhe: pelaajanimi ei voi olla tyhjä."
+        screen_name = request.form["screen_name"]
+        # screen_name = input("Anna pelaajanimesi: ")
 
-    check_sql = "SELECT screen_name FROM game WHERE screen_name = %s"
-    cursor.execute(check_sql, (screen_name,))
-    result = cursor.fetchone()
+        if not screen_name:
+            return "Virhe: pelaajanimi ei voi olla tyhjä."
 
-    if result:
-        return "Käyttäjänimi on jo varattu"
+        connect = connection()
+        cursor = connect.cursor()
 
-    insert_sql = "INSERT INTO game (screen_name) VALUES (%s)"
-    cursor.execute(insert_sql, (screen_name,))
-    connect.commit()
+        check_sql = "SELECT screen_name FROM game WHERE screen_name = %s"
+        cursor.execute(check_sql, (screen_name,))
+        result = cursor.fetchone()
 
-    player_id = cursor.lastrowid
+        if result:
+            return "Käyttäjänimi on jo varattu"
 
-    cursor.close()
-    connect.close()
+        insert_sql = "INSERT INTO game (screen_name) VALUES (%s)"
+        cursor.execute(insert_sql, (screen_name,))
+        connect.commit()
 
-    Player.current_player = Player(screen_name, player_id)
+        player_id = cursor.lastrowid
 
-    # print("Kuulet kuulutuksen: lentosi lähtee pian. Valitse oikea lento lentotaulusta. Kello on 7.32, ja kone nousee ilmaan jo 13 minuutin kuluttua!")
+        cursor.close()
+        connect.close()
 
-    game_loop()
+        Player.current_player = Player(screen_name, player_id)
+
+    return "Pelaaja tallennettu!"
