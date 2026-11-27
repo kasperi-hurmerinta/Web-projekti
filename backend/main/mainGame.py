@@ -14,7 +14,7 @@ app = Flask(__name__, template_folder=src_path)
 def etusivu():
     return render_template("index.html")
 
-@app.route("/uusi-peli", methods=["POST"])
+@app.route("/uusi-peli")
 def uusi_peli():
     new_game()
 
