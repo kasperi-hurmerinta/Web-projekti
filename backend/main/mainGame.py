@@ -5,21 +5,23 @@ from functions.newGame import new_game
 
 src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
+static_path = os.path.join(src_path, 'static')
+
 if src_path not in sys.path:
     sys.path.insert(0, src_path)
 
-app = Flask(__name__, template_folder=src_path)
+app = Flask(__name__, template_folder=src_path, static_folder=static_path)
 
 @app.route("/etusivu")
 def etusivu():
     return render_template("index.html")
+
 @app.route("/ohjeet")
 def ohjeet():
     return render_template("ohjeet.html")
 
 @app.route("/uusi-peli", methods=["GET", "POST"])
 def uusi_peli():
-
     new_game()
 
     return render_template("uusi-peli.html")

@@ -86,7 +86,7 @@ button:hover {
   right: 0;
   width: auto;
   height: 100px;
-  background: url("https://i.imgur.com/ZAts69f.png");
+  background: url("../images/wave.png");
   filter: hue-rotate(29deg);
   background-size: 1000px 100px;
 }
